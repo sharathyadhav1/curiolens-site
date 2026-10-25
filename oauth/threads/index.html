@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Connecting</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<main>
+<h1>Connecting…</h1>
+<p class="meta">Returning to the CurioLens Publisher on this computer. If nothing happens, make sure <code>scripts/publish connect threads</code> is running.</p>
+</main>
+<script>
+// Threads requires an HTTPS redirect, so this page hands the one-time code and state to the
+// local connect command. The code is useless without the app secret held on that computer,
+// and the state is checked there. location.replace keeps it out of this page's history.
+location.replace('http://localhost:8787/oauth/threads/callback' + location.search);
+</script>
+</body>
+</html>
